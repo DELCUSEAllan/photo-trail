@@ -1,0 +1,21 @@
+#photo-trail-container {
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	overflow: hidden;
+	z-index: 9999;
+}
+
+.photo-trail-image {
+	position: absolute;
+	width: clamp(120px, 16vw, var(--photo-trail-image-size, 240px));
+	border-radius: 16px;
+	box-shadow: 0 12px 35px rgb(0 0 0 / 35%);
+	will-change: transform, opacity;
+}
+
+@media (max-width: 768px) {
+	#photo-trail-container {
+		display: none;
+	}
+}
