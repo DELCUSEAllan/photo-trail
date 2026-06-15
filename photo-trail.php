@@ -20,7 +20,7 @@ define( 'PHOTO_TRAIL_OPTION_NAME', 'photo_trail_settings' );
 function photo_trail_default_settings() {
 	return array(
 		'page_slug'      => 'pele-mele',
-		'image_folder'   => 'photo-trail/images',
+		'image_folder'   => 'coopnum/photo-trail/images',
 		'spawn_delay'    => 180,
 		'animation_time' => 3500,
 		'image_size'     => 240,
@@ -144,7 +144,7 @@ function photo_trail_render_settings_page() {
 						>
 						<p class="description">
 							Folder inside <code>wp-content</code>. Example:
-							<code>photo-trail/images</code>
+							<code>coopnum/photo-trail/images</code>
 						</p>
 					</td>
 				</tr>
@@ -263,7 +263,7 @@ function photo_trail_get_images() {
 
 		if (
 			false === $real_file_path ||
-			0 !== strpos( $real_file_path, $real_image_dir )
+			0 !== strpos( wp_normalize_path( $real_file_path ), wp_normalize_path( $real_image_dir ) )
 		) {
 			continue;
 		}
