@@ -4,6 +4,8 @@ Photo Trail is a lightweight WordPress plugin that creates an interactive image 
 
 The plugin automatically loads images from a server directory and displays them dynamically as visitors move their mouse across a page.
 
+The project was originally developed by Allan Delcuse during a web development internship carried out with Proximale and the COOPNUM (Coopérative Numérique des 7 Vallées).
+
 ## Features
 
 * Interactive image trail effect
