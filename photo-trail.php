@@ -5,9 +5,14 @@
  * Description: Creates an interactive photo trail effect that displays random images following the user's cursor.
  * Version: 1.0.0
  * Author: Allan Delcuse
+ * Author URI: https://github.com/DELCUSEAllan
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: photo-trail
+ *
+ * Originally developed during a web development internship
+ * with Proximale and the COOPNUM
+ * (Coopérative Numérique des 7 Vallées).
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,7 +24,7 @@ define( 'PHOTO_TRAIL_OPTION_NAME', 'photo_trail_settings' );
 
 function photo_trail_default_settings() {
 	return array(
-		'page_slug'      => 'pele-mele',
+		'page_slug'      => 'photo-trail',
 		'image_folder'   => 'coopnum/photo-trail/images',
 		'spawn_delay'    => 180,
 		'animation_time' => 3500,
@@ -126,7 +131,7 @@ function photo_trail_render_settings_page() {
 							value="<?php echo esc_attr( $settings['page_slug'] ); ?>"
 							class="regular-text"
 						>
-						<p class="description">Example: <code>pele-mele</code></p>
+						<p class="description">Example: <code>photo-trail</code></p>
 					</td>
 				</tr>
 

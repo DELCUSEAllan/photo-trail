@@ -33,17 +33,16 @@ The plugin automatically loads images from a server directory and displays them 
 
 Target page slug:
 
-`pele-mele`
+`photo-trail`
 
 Image folder:
 
-`coopnum/photo-trail/images`
+`photo-trail/images`
 
 ## Folder Structure
 
 ```text
 wp-content/
-└── coopnum/
     └── photo-trail/
         └── images/
 ```
@@ -56,6 +55,12 @@ wp-content/
 ## Author
 
 Allan Delcuse
+
+## About
+
+Photo Trail was originally developed by Allan Delcuse during a web development internship carried out at Proximale and the COOPNUM (Coopérative Numérique des 7 Vallées).
+
+The plugin was created as part of a website redesign project and designed to provide an interactive way of showcasing event posters and visual content.
 
 ## License
 
