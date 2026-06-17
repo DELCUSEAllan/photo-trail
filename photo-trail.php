@@ -283,12 +283,12 @@ function photo_trail_enqueue_front_assets() {
 	$settings = photo_trail_get_settings();
 
 	if (
-		is_admin() ||
-		empty( $settings['page_slug'] ) ||
-		! is_page( $settings['page_slug'] )
-	) {
-		return;
-	}
+        photo_trail_is_editor_or_preview_mode() ||
+        empty( $settings['page_slug'] ) ||
+        ! is_page( $settings['page_slug'] )
+    ) {
+	    return;
+}
 
 	$images = photo_trail_get_images();
 
@@ -326,3 +326,26 @@ function photo_trail_enqueue_front_assets() {
 }
 
 add_action( 'wp_enqueue_scripts', 'photo_trail_enqueue_front_assets' );
+
+function photo_trail_is_editor_or_preview_mode() {
+	if ( is_admin() || is_preview() || is_customize_preview() ) {
+		return true;
+	}
+
+	$editor_query_params = array(
+		'et_fb',      // Divi Visual Builder.
+		'elementor-preview',
+		'bricks',
+		'ct_builder',
+		'fl_builder',
+		'vc_editable',
+	);
+
+	foreach ( $editor_query_params as $param ) {
+		if ( isset( $_GET[ $param ] ) ) {
+			return true;
+		}
+	}
+
+	return false;
+}
